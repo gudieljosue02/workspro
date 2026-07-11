@@ -533,8 +533,9 @@ svg.wp-card__bg {
   padding-top: 56px;
   padding-bottom: 32px;
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   gap: 40px;
+  align-items: start;
 }
 .wp-footer__logo { height: 52px; margin-bottom: 16px; display: block; }
 .wp-footer__blurb {

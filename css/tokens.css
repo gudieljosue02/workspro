@@ -1,0 +1,191 @@
+/* WORKPRO'S — Design tokens
+   Synced from the WORKPRO'S Design System (tokens/fonts.css, colors.css,
+   typography.css, layout.css, base.css). Palette pulled directly from the
+   logo: contractor blue, charcoal, white. No gradients. Flat, high-contrast,
+   senior-friendly. */
+
+/* Headings: Archivo (sturdy grotesque, echoes the bold logo wordmark).
+   Body: Source Sans 3 (humanist, highly legible).
+   Self-hosted (latin subset) — no third-party font CDN at runtime. */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/archivo-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/archivo-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/archivo-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../assets/fonts/archivo-latin-800-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../assets/fonts/archivo-latin-900-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/source-sans-3-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/source-sans-3-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/source-sans-3-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/source-sans-3-latin-700-normal.woff2') format('woff2');
+}
+
+:root {
+  /* Brand blue ramp */
+  --wp-blue-900: #14315F;
+  --wp-blue-700: #1E4483;
+  --wp-blue:     #26539E; /* PRIMARY — from logo "PRO'S" */
+  --wp-blue-500: #3A66B0;
+  --wp-blue-300: #8FA9D3;
+  --wp-blue-100: #DCE5F3;
+  --wp-blue-50:  #EEF3FA;
+
+  /* Charcoal ramp (logo "WORK" + tagline) */
+  --wp-charcoal-900: #23262C;
+  --wp-charcoal:     #3E434D; /* SECONDARY — from logo */
+  --wp-charcoal-600: #575D68;
+  --wp-charcoal-400: #8A909B;
+  --wp-charcoal-200: #C7CBD2;
+  --wp-charcoal-100: #E3E5E9;
+
+  /* Neutrals */
+  --wp-white:  #FFFFFF;
+  --wp-paper:  #F6F7F9; /* off-white page background */
+  --wp-line:   #DDE0E5; /* hairline borders */
+  --wp-black:  #16181C;
+
+  /* Functional (kept muted so blue stays the hero) */
+  --wp-success: #2E7D46;
+  --wp-warning: #C77A18;
+  --wp-danger:  #C0392B;
+  --wp-success-bg: #E7F1EA;
+  --wp-warning-bg: #FBF0DE;
+  --wp-danger-bg:  #F8E7E4;
+
+  /* Semantic aliases */
+  --color-primary:        var(--wp-blue);
+  --color-primary-hover:  var(--wp-blue-700);
+  --color-primary-active: var(--wp-blue-900);
+  --color-primary-soft:   var(--wp-blue-100);
+
+  --text-strong:  var(--wp-charcoal-900);
+  --text-body:    var(--wp-charcoal);
+  --text-muted:   var(--wp-charcoal-600);
+  --text-faint:   var(--wp-charcoal-400);
+  --text-on-dark: var(--wp-white);
+  --text-link:    var(--wp-blue);
+
+  --surface-page:    var(--wp-paper);
+  --surface-card:    var(--wp-white);
+  --surface-inverse: var(--wp-charcoal-900);
+  --surface-soft:    var(--wp-blue-50);
+
+  --border-default: var(--wp-line);
+  --border-strong:  var(--wp-charcoal);
+  --border-focus:   var(--wp-blue);
+
+  /* Typography */
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-body:    'Source Sans 3', system-ui, sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold: 600;
+  --fw-bold:    700;
+  --fw-heavy:   800;
+  --fw-black:   900;
+
+  /* Type scale (comfortable, senior-friendly) */
+  --fs-display: 60px;  /* hero */
+  --fs-h1: 44px;
+  --fs-h2: 34px;
+  --fs-h3: 26px;
+  --fs-h4: 21px;
+  --fs-lead: 20px;     /* intro paragraphs */
+  --fs-body: 18px;     /* default body — never smaller */
+  --fs-small: 16px;
+  --fs-label: 14px;    /* uppercase labels / eyebrows */
+
+  --lh-tight: 1.08;
+  --lh-snug:  1.25;
+  --lh-normal: 1.55;
+  --lh-relaxed: 1.7;
+
+  --ls-tight: -0.01em;
+  --ls-label: 0.08em;
+  --ls-wide:  0.02em;
+
+  /* Spacing scale (4px base) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+
+  /* Radius — square-leaning. No pills. */
+  --radius-sm: 3px;
+  --radius-md: 5px;   /* default: buttons, inputs, cards */
+  --radius-lg: 8px;   /* large cards / dialogs */
+  --radius-none: 0px;
+
+  /* Borders */
+  --bw-hair: 1px;
+  --bw-solid: 2px;    /* signature 2px charcoal border */
+
+  /* Shadows — restrained, cool-neutral, never glowing */
+  --shadow-sm: 0 1px 2px rgba(35,38,44,0.08);
+  --shadow-md: 0 4px 10px rgba(35,38,44,0.10);
+  --shadow-lg: 0 12px 28px rgba(35,38,44,0.12);
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 3px var(--wp-blue-100);
+
+  /* Layout */
+  --container: 1200px;
+  --container-narrow: 820px;
+}

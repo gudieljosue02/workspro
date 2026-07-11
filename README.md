@@ -29,7 +29,10 @@ python3 -m http.server 8000
 
 - **Fonts:** Archivo (display) and Source Sans 3 (body) from Google Fonts.
 - **Icons:** [Lucide](https://lucide.dev) from CDN.
-- **Quote form:** currently shows a success state client-side only; wire the
-  submit handler in `js/main.js` to a real endpoint when one exists.
+- **Quote form:** submits via [FormSubmit](https://formsubmit.co) to
+  `gudiel@workspro.homes` (a Porkbun email forward). The first live
+  submission triggers FormSubmit's one-time activation email; after
+  confirming, requests arrive as table-formatted emails. A honeypot field
+  filters basic spam bots.
 - **Photography:** the hero shows a client-provided house photo
   (`assets/hero-house.webp`) inside the brand's bordered white frame.

@@ -498,24 +498,33 @@ svg.wp-card__bg {
 }
 .wp-check:focus-visible { outline: none; box-shadow: var(--focus-ring); }
 
-/* Alert — flat tinted background, left keyline (success state) */
+/* Alert — flat tinted background, left keyline */
 .wp-alert[hidden] { display: none; }
 .wp-alert {
   display: flex;
   gap: 12px;
   align-items: flex-start;
-  background: var(--wp-success-bg);
-  border-left: 4px solid var(--wp-success);
+  border-left: 4px solid;
   border-radius: var(--radius-md);
   padding: 16px 18px;
+}
+.wp-alert--success {
+  background: var(--wp-success-bg);
+  border-left-color: var(--wp-success);
   color: #1E5A31;
+}
+.wp-alert--danger {
+  background: var(--wp-danger-bg);
+  border-left-color: var(--wp-danger);
+  color: #7C2318;
 }
 .wp-alert__icon {
   display: inline-flex;
-  color: var(--wp-success);
   flex: 0 0 auto;
   margin-top: 1px;
 }
+.wp-alert--success .wp-alert__icon { color: var(--wp-success); }
+.wp-alert--danger .wp-alert__icon { color: var(--wp-danger); }
 .wp-alert__title {
   font-family: var(--font-display);
   font-weight: var(--fw-bold);

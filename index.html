@@ -161,6 +161,8 @@
       </div>
       <div class="wp-quote__card">
         <form id="quote-form" novalidate>
+          <!-- Honeypot field: humans never see it, spam bots fill it -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
           <div class="wp-quote__fields">
             <div class="wp-field">
               <label for="qf-name">Your name</label>
@@ -214,11 +216,18 @@
             <i data-lucide="arrow-right" class="ic-22"></i>
           </button>
         </form>
-        <div id="quote-success" class="wp-alert" role="status" hidden>
+        <div id="quote-success" class="wp-alert wp-alert--success" role="status" hidden>
           <span class="wp-alert__icon"><i data-lucide="check-circle" class="ic-22"></i></span>
           <div>
             <div class="wp-alert__title">Request sent! Thank you.</div>
             <div class="wp-alert__body">A WORKPRO'S team member will call you within one business day to confirm the details.</div>
+          </div>
+        </div>
+        <div id="quote-error" class="wp-alert wp-alert--danger" role="status" hidden>
+          <span class="wp-alert__icon"><i data-lucide="alert-circle" class="ic-22"></i></span>
+          <div>
+            <div class="wp-alert__title">Something went wrong.</div>
+            <div class="wp-alert__body">Your request couldn't be sent. Please try again, or call us at (555) 123-4567.</div>
           </div>
         </div>
       </div>
@@ -239,7 +248,7 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:5551234567">(555) 123-4567</a></li>
-        <li><a href="mailto:hello@workpros.com">hello@workpros.com</a></li>
+        <li><a href="mailto:gudiel@workspro.homes">gudiel@workspro.homes</a></li>
         <li><span>Mon–Sat, 7am–6pm</span></li>
       </ul>
     </div>

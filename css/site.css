@@ -319,8 +319,6 @@ svg.wp-card__bg {
 .wp-card--photo .wp-card__icon { background: var(--wp-blue); color: #fff; }
 .wp-card--photo h3 { color: #fff; }
 .wp-card--photo .wp-card__desc { color: rgba(255, 255, 255, 0.85); }
-.wp-card--photo .wp-card__action a { color: var(--wp-blue-300); }
-.wp-card--photo .wp-card__action a:hover { color: #fff; }
 .wp-card--interactive { cursor: pointer; }
 .wp-card--interactive:hover {
   box-shadow: var(--shadow-md);
@@ -350,9 +348,6 @@ svg.wp-card__bg {
   color: var(--text-muted);
   line-height: 1.5;
 }
-.wp-card__action { margin-top: auto; padding-top: 4px; }
-.wp-card__action a { display: inline-flex; align-items: center; gap: 6px; }
-.wp-card__action a:hover { color: var(--wp-blue-700); text-decoration: underline; }
 
 /* ============ Why us ============ */
 .wp-why { background: var(--wp-paper); }

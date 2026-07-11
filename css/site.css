@@ -1,4 +1,4 @@
-/* WORKPRO'S marketing homepage — base elements, design-system components,
+/* WORKSPRO marketing homepage — base elements, design-system components,
    and page sections. Implements ui_kits/website from the design system. */
 
 /* ============ Base ============ */
@@ -641,5 +641,16 @@ svg.wp-card__bg {
     padding: 10px 16px;
     min-height: 44px;
     white-space: nowrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .wp-header__inner { gap: 8px; }
+  .wp-header__logo { height: 34px; }
+  .wp-header__actions { gap: 8px; }
+  .wp-header__actions .wp-btn {
+    font-size: 14px;
+    padding: 9px 12px;
+    min-height: 40px;
   }
 }

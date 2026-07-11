@@ -1,11 +1,11 @@
-/* WORKPRO'S marketing homepage — icon rendering + quote-form submission. */
+/* WORKSPRO marketing homepage — icon rendering + quote-form submission. */
 
 // Render Lucide icons (replaces every <i data-lucide="…"> with an inline SVG).
 if (window.lucide) {
   window.lucide.createIcons();
 }
 
-// Free-quote form: submits via FormSubmit and emails the request to WORKPRO'S.
+// Free-quote form: submits via FormSubmit and emails the request to WORKSPRO.
 var FORM_ENDPOINT = 'https://formsubmit.co/ajax/gudiel@workspro.homes';
 
 var form = document.getElementById('quote-form');

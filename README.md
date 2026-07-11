@@ -1,8 +1,8 @@
-# WORKPRO'S — Marketing Website
+# WORKSPRO — Marketing Website
 
-Static marketing homepage for **WORKPRO'S**, a family-owned home-services company
+Static marketing homepage for **WORKSPRO**, a family-owned home-services company
 (Handyman · Remodeling · Painting · Plumbing), implemented from the
-[WORKPRO'S Design System](https://claude.ai/design/p/8c6b71c9-3e99-4392-ace1-18cc14e034a9)
+[WORKSPRO Design System](https://claude.ai/design/p/8c6b71c9-3e99-4392-ace1-18cc14e034a9)
 (`ui_kits/website/index.html`).
 
 ## Structure

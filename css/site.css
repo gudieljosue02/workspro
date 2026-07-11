@@ -303,6 +303,24 @@ svg.wp-card__bg {
 }
 .wp-card--charcoal .wp-card__bg,
 .wp-card--charcoal svg.wp-card__bg { color: var(--wp-charcoal-100); }
+
+/* Photo cards: real job photo as background, charcoal scrim keeps text readable */
+.wp-card--photo {
+  background-size: cover;
+  background-position: center;
+}
+.wp-card--photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(22, 24, 28, 0.72);
+  z-index: 0;
+}
+.wp-card--photo .wp-card__icon { background: var(--wp-blue); color: #fff; }
+.wp-card--photo h3 { color: #fff; }
+.wp-card--photo .wp-card__desc { color: rgba(255, 255, 255, 0.85); }
+.wp-card--photo .wp-card__action a { color: var(--wp-blue-300); }
+.wp-card--photo .wp-card__action a:hover { color: #fff; }
 .wp-card--interactive { cursor: pointer; }
 .wp-card--interactive:hover {
   box-shadow: var(--shadow-md);

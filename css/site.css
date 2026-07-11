@@ -175,7 +175,7 @@ img { max-width: 100%; }
   padding-top: 14px;
   padding-bottom: 14px;
 }
-.wp-header__logo { height: 46px; display: block; }
+.wp-header__logo { height: 46px; width: auto; display: block; flex-shrink: 0; }
 .wp-nav { display: flex; gap: 28px; margin-left: 24px; }
 .wp-nav a {
   color: var(--text-strong);
@@ -630,4 +630,16 @@ svg.wp-card__bg {
   .wp-quote__fields { grid-template-columns: 1fr; }
   .wp-footer-grid { grid-template-columns: 1fr; }
   .wp-header__phone span { display: none; } /* keep the phone icon, drop the number */
+
+  /* Tighten the header so the logo always has room and nothing wraps */
+  .wp-container { padding-left: 16px; padding-right: 16px; }
+  .wp-header__inner { gap: 12px; }
+  .wp-header__actions { gap: 10px; }
+  .wp-header__logo { height: 40px; }
+  .wp-header__actions .wp-btn {
+    font-size: 15px;
+    padding: 10px 16px;
+    min-height: 44px;
+    white-space: nowrap;
+  }
 }

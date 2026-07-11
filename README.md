@@ -31,5 +31,5 @@ python3 -m http.server 8000
 - **Icons:** [Lucide](https://lucide.dev) from CDN.
 - **Quote form:** currently shows a success state client-side only; wire the
   submit handler in `js/main.js` to a real endpoint when one exists.
-- **Photography:** the hero uses a bordered placeholder — drop in a real crew
-  photo.
+- **Photography:** the hero shows a client-provided house photo
+  (`assets/hero-house.webp`) inside the brand's bordered white frame.

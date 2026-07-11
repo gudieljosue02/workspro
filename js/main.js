@@ -1,9 +1,4 @@
-/* WORKSPRO marketing homepage — icon rendering + quote-form submission. */
-
-// Render Lucide icons (replaces every <i data-lucide="…"> with an inline SVG).
-if (window.lucide) {
-  window.lucide.createIcons();
-}
+/* WORKSPRO marketing homepage — quote-form submission. */
 
 // Free-quote form: submits via FormSubmit and emails the request to WORKSPRO.
 var FORM_ENDPOINT = 'https://formsubmit.co/ajax/gudiel@workspro.homes';
@@ -15,6 +10,14 @@ var failure = document.getElementById('quote-error');
 if (form && success && failure) {
   form.addEventListener('submit', function (event) {
     event.preventDefault();
+
+    // Belt-and-suspenders: never send an empty request even if the
+    // browser skipped native validation for any reason.
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
     failure.hidden = true;
 
     var button = form.querySelector('button[type="submit"]');
@@ -40,15 +43,12 @@ if (form && success && failure) {
         if (!response.ok) throw new Error('HTTP ' + response.status);
         form.hidden = true;
         success.hidden = false;
-        if (window.lucide) window.lucide.createIcons();
         success.scrollIntoView({ behavior: 'smooth', block: 'center' });
       })
       .catch(function () {
         failure.hidden = false;
-        if (window.lucide) window.lucide.createIcons();
         button.disabled = false;
         button.innerHTML = originalLabel;
-        if (window.lucide) window.lucide.createIcons();
       });
   });
 }

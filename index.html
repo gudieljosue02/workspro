@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WORKPRO'S — Handyman, Remodeling, Painting &amp; Plumbing</title>
-<meta name="description" content="WORKPRO'S — family-owned handyman and home-service pros. Handyman, remodeling, painting, plumbing, electrical, and doors & windows. Licensed & insured. Get a free quote.">
-<link rel="icon" type="image/png" href="assets/workpros-mark.png">
+<meta name="description" content="WORKPRO'S — family-owned handyman and home-service pros. Handyman, remodeling, painting, plumbing, minor electrical, and doors & windows. Get a free quote.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="alternate icon" type="image/png" href="assets/favicon.png">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/site.css">
 </head>
@@ -19,7 +20,6 @@
     <nav class="wp-nav" aria-label="Main">
       <a href="#services">Services</a>
       <a href="#about">About</a>
-      <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="wp-header__actions">
@@ -38,10 +38,6 @@
   <section class="wp-hero">
     <div class="wp-container wp-hero__grid">
       <div>
-        <div class="wp-hero__badges">
-          <span class="wp-badge wp-badge--blue-solid">Licensed &amp; insured</span>
-          <span class="wp-badge wp-badge--on-dark">15+ years local</span>
-        </div>
         <h1>Your home's<br>to-do list,<br><span class="accent">finally done.</span></h1>
         <p class="wp-hero__lead">
           One trusted crew for handyman work, remodeling, painting, and plumbing.
@@ -57,18 +53,11 @@
             (555) 123-4567
           </a>
         </div>
-        <div class="wp-hero__rating" id="reviews">
-          <span class="stars" aria-hidden="true">★★★★★</span>
-          <span><strong>4.9/5</strong> from 600+ neighbors</span>
-        </div>
       </div>
       <div class="wp-hero__frame">
         <div class="wp-hero__photo">
-          <!-- Placeholder — drop in a real crew/job photo -->
-          <div class="wp-hero__photo-placeholder">
-            <i data-lucide="hard-hat" class="ic-48"></i>
-            <div>Crew photo</div>
-          </div>
+          <!-- Illustration stand-in — swap for a real house/job photo when available -->
+          <img src="assets/tennessee-house.svg" alt="A common single-story brick home in Tennessee">
         </div>
       </div>
     </div>
@@ -83,10 +72,11 @@
         </svg>
         <span class="wp-eyebrow">What we do</span>
         <h2>Services for every corner of your home</h2>
-        <p>Whatever the project, you get the same trusted crew — licensed, insured, and on time.</p>
+        <p>Whatever the project, you get the same trusted crew — on time, every time.</p>
       </div>
       <div class="wp-svc-grid">
         <div class="wp-card wp-card--interactive">
+          <i data-lucide="hammer" class="wp-card__bg" aria-hidden="true"></i>
           <span class="wp-card__icon"><i data-lucide="hammer" class="ic-28"></i></span>
           <div>
             <h3>Handyman</h3>
@@ -95,6 +85,7 @@
           <div class="wp-card__action"><a href="#contact">Learn more <i data-lucide="arrow-right" class="ic-18"></i></a></div>
         </div>
         <div class="wp-card wp-card--interactive">
+          <i data-lucide="ruler" class="wp-card__bg" aria-hidden="true"></i>
           <span class="wp-card__icon"><i data-lucide="ruler" class="ic-28"></i></span>
           <div>
             <h3>Remodeling</h3>
@@ -103,6 +94,7 @@
           <div class="wp-card__action"><a href="#contact">Learn more <i data-lucide="arrow-right" class="ic-18"></i></a></div>
         </div>
         <div class="wp-card wp-card--interactive wp-card--charcoal">
+          <i data-lucide="paint-roller" class="wp-card__bg" aria-hidden="true"></i>
           <span class="wp-card__icon"><i data-lucide="paint-roller" class="ic-28"></i></span>
           <div>
             <h3>Painting</h3>
@@ -111,6 +103,7 @@
           <div class="wp-card__action"><a href="#contact">Learn more <i data-lucide="arrow-right" class="ic-18"></i></a></div>
         </div>
         <div class="wp-card wp-card--interactive">
+          <i data-lucide="wrench" class="wp-card__bg" aria-hidden="true"></i>
           <span class="wp-card__icon"><i data-lucide="wrench" class="ic-28"></i></span>
           <div>
             <h3>Plumbing</h3>
@@ -119,14 +112,16 @@
           <div class="wp-card__action"><a href="#contact">Learn more <i data-lucide="arrow-right" class="ic-18"></i></a></div>
         </div>
         <div class="wp-card wp-card--interactive">
+          <i data-lucide="plug-zap" class="wp-card__bg" aria-hidden="true"></i>
           <span class="wp-card__icon"><i data-lucide="plug-zap" class="ic-28"></i></span>
           <div>
             <h3>Electrical</h3>
-            <p class="wp-card__desc">Fixtures, outlets, and switches installed safely by licensed pros.</p>
+            <p class="wp-card__desc">Minor electrical only — light fixtures, outlets, and switches. Small jobs, within what the law allows.</p>
           </div>
           <div class="wp-card__action"><a href="#contact">Learn more <i data-lucide="arrow-right" class="ic-18"></i></a></div>
         </div>
         <div class="wp-card wp-card--interactive wp-card--charcoal">
+          <i data-lucide="door-open" class="wp-card__bg" aria-hidden="true"></i>
           <span class="wp-card__icon"><i data-lucide="door-open" class="ic-28"></i></span>
           <div>
             <h3>Doors &amp; Windows</h3>
@@ -147,7 +142,7 @@
         </svg>
         <span class="wp-eyebrow">Why WORKPRO'S</span>
         <h2>The neighbor you'd trust with a key</h2>
-        <p>Family-owned and local since 2009. We treat your home the way we'd treat our own.</p>
+        <p>Family-owned and local. We treat your home the way we'd treat our own.</p>
       </div>
       <div class="wp-why__points">
         <div class="wp-why__point">
@@ -165,10 +160,10 @@
           </div>
         </div>
         <div class="wp-why__point">
-          <span class="wp-why__point-icon"><i data-lucide="shield-check" class="ic-24"></i></span>
+          <span class="wp-why__point-icon"><i data-lucide="clipboard-check" class="ic-24"></i></span>
           <div>
-            <h3>Licensed &amp; insured</h3>
-            <p>Fully covered work by background-checked pros.</p>
+            <h3>Free estimates</h3>
+            <p>Every job starts with a free, no-obligation estimate.</p>
           </div>
         </div>
         <div class="wp-why__point">
@@ -266,7 +261,7 @@
     <div>
       <img src="assets/workpros-logo-white.png" alt="WORKPRO'S" class="wp-footer__logo">
       <p class="wp-footer__blurb">
-        Family-owned handyman and home-service pros, proudly serving the neighborhood since 2009.
+        Family-owned handyman and home-service pros, proudly serving the neighborhood.
       </p>
     </div>
     <div>
@@ -283,7 +278,6 @@
       <h4>Company</h4>
       <ul>
         <li><a href="#about">About us</a></li>
-        <li><a href="#reviews">Reviews</a></li>
         <li><a href="#about">Service area</a></li>
         <li><a href="#contact">Careers</a></li>
       </ul>
@@ -299,7 +293,7 @@
   </div>
   <div class="wp-footer__legal">
     <div class="wp-container wp-footer__legal-inner">
-      <span>© 2026 WORKPRO'S Home Services. Licensed &amp; insured.</span>
+      <span>© 2026 WORKPRO'S Home Services.</span>
       <span>Handyman · Remodeling · Painting · Plumbing</span>
     </div>
   </div>

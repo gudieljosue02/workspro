@@ -35,7 +35,14 @@ a {
   text-decoration: none;
   font-weight: var(--fw-semibold);
 }
-a:hover { color: var(--wp-blue-300); }
+/* Darker on hover: --wp-blue-300 only has 2.39:1 on white */
+a:hover { color: var(--wp-blue-700); }
+
+a:focus-visible {
+  outline: 3px solid var(--wp-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
 
 img { max-width: 100%; }
 
@@ -159,6 +166,11 @@ img { max-width: 100%; }
 }
 .wp-heading--on-dark h2 { color: var(--wp-white); }
 .wp-heading--on-dark p  { color: rgba(255,255,255,0.8); }
+/* On charcoal, brand blue only reaches 2.03:1 — use the light ramp instead */
+.wp-heading--on-dark .wp-eyebrow { color: var(--wp-blue-300); }
+
+/* Anchors must clear the sticky header */
+[id] { scroll-margin-top: 90px; }
 
 /* ============ Header ============ */
 .wp-header {
@@ -213,6 +225,14 @@ img { max-width: 100%; }
   align-items: center;
 }
 .wp-hero__badges { display: flex; gap: 8px; margin-bottom: 20px; }
+/* Locating line under the headline — carries the city/state for search */
+.wp-hero__kicker {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: 20px;
+  color: var(--wp-blue-300);
+  margin: 0 0 18px;
+}
 .wp-hero h1 {
   font-weight: var(--fw-black);
   font-size: 56px;
@@ -387,6 +407,66 @@ svg.wp-card__bg {
   line-height: 1.5;
 }
 
+/* ============ Service area ============ */
+.wp-area { background: var(--wp-paper); }
+.wp-area__inner { padding-top: 72px; padding-bottom: 72px; }
+.wp-area .wp-heading { margin-bottom: 36px; }
+.wp-area__towns {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.wp-area__towns li {
+  background: #fff;
+  border: 1px solid var(--border-default);
+  border-left: 3px solid var(--wp-blue);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+.wp-area__towns strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: 18px;
+  color: var(--text-strong);
+}
+.wp-area__towns span {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+.wp-area__note {
+  margin: 0;
+  text-align: center;
+  font-size: 17px;
+  color: var(--text-muted);
+}
+
+/* ============ FAQ ============ */
+.wp-faq { background: #fff; }
+.wp-faq__inner { padding-top: 72px; padding-bottom: 72px; }
+.wp-faq .wp-heading { margin-bottom: 40px; }
+.wp-faq__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.wp-faq__item h3 {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: var(--fw-bold);
+}
+.wp-faq__item p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
 /* ============ Quote form ============ */
 .wp-quote { background: var(--wp-charcoal-900); }
 .wp-quote__inner {
@@ -553,7 +633,8 @@ svg.wp-card__bg {
   max-width: 300px;
   margin: 0;
 }
-.wp-footer h4 {
+.wp-footer__heading {
+  font-family: var(--font-display);
   font-weight: var(--fw-bold);
   font-size: 15px;
   letter-spacing: 0.06em;
@@ -561,6 +642,15 @@ svg.wp-card__bg {
   color: #fff;
   margin: 0 0 14px;
 }
+/* Machine-readable NAP block (matches Google Business Profile wording) */
+.wp-footer__nap {
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 16px;
+  color: rgba(255,255,255,0.72);
+}
+.wp-footer__nap strong { color: #fff; }
 .wp-footer ul {
   list-style: none;
   padding: 0;
@@ -579,6 +669,9 @@ svg.wp-card__bg {
   gap: 9px;
 }
 .wp-footer ul a:hover { color: #fff; }
+/* Tap targets: these links are the real conversion paths */
+.wp-footer ul a { padding: 8px 0; }
+.wp-footer ul { gap: 4px; }
 .wp-footer ul .lucide { flex: 0 0 auto; color: var(--wp-blue-300); }
 /* The "text us" line wraps to two lines, so top-align its icon */
 .wp-footer__text { align-items: flex-start !important; line-height: 1.4; }
@@ -622,6 +715,9 @@ svg.wp-card__bg {
   .wp-svc-grid { grid-template-columns: 1fr 1fr; }
   .wp-footer-grid { grid-template-columns: 1fr 1fr; }
   .wp-nav { display: none; }
+  .wp-area__towns { grid-template-columns: 1fr 1fr; }
+  .wp-faq__list { grid-template-columns: 1fr; gap: 24px; }
+  [id] { scroll-margin-top: 76px; }
 }
 
 @media (max-width: 640px) {
@@ -629,7 +725,11 @@ svg.wp-card__bg {
   .wp-svc-grid { grid-template-columns: 1fr; }
   .wp-quote__fields { grid-template-columns: 1fr; }
   .wp-footer-grid { grid-template-columns: 1fr; }
-  .wp-header__phone span { display: none; } /* keep the phone icon, drop the number */
+  /* Keep the number visible on mobile: it's a trust signal and a NAP token.
+     Shrink it rather than hiding it, and keep a 44px tap target. */
+  .wp-header__phone { font-size: 16px; min-height: 44px; padding: 4px; }
+  .wp-hero__kicker { font-size: 18px; }
+  .wp-area__towns { grid-template-columns: 1fr; }
 
   /* Tighten the header so the logo always has room and nothing wraps */
   .wp-container { padding-left: 16px; padding-right: 16px; }
@@ -646,11 +746,22 @@ svg.wp-card__bg {
 
 @media (max-width: 420px) {
   .wp-header__inner { gap: 8px; }
-  .wp-header__logo { height: 34px; }
-  .wp-header__actions { gap: 8px; }
+  .wp-header__logo { height: 30px; }
+  .wp-header__actions { gap: 6px; }
+  /* The number needs its own room at this width, so it drops to the hero
+     copy and footer; the icon keeps a labelled 44px call target. */
+  .wp-header__phone span { display: none; }
   .wp-header__actions .wp-btn {
     font-size: 14px;
     padding: 9px 12px;
     min-height: 40px;
   }
+  .wp-hero h1 { font-size: 36px; }
+}
+
+/* Respect the OS reduced-motion setting */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .wp-card--interactive:hover { transform: none; }
+  * { transition-duration: 0.01ms !important; }
 }

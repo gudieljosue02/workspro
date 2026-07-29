@@ -407,6 +407,55 @@ svg.wp-card__bg {
   line-height: 1.5;
 }
 
+/* ============ Common jobs ============ */
+.wp-jobs { background: var(--wp-paper); }
+.wp-jobs__inner { padding-top: 72px; padding-bottom: 72px; }
+.wp-jobs .wp-heading { margin-bottom: 40px; }
+.wp-jobs__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.wp-jobs__group {
+  background: #fff;
+  border: 1px solid var(--border-default);
+  border-top: 3px solid var(--wp-blue);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+}
+.wp-jobs__group h3 {
+  margin: 0 0 12px;
+  font-size: 19px;
+  font-weight: var(--fw-bold);
+}
+.wp-jobs__group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.wp-jobs__group li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+/* Small roof-peak bullet, drawn from the brand motif */
+.wp-jobs__group li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 9px;
+  height: 5px;
+  border-left: 2px solid var(--wp-blue);
+  border-top: 2px solid var(--wp-blue);
+  transform: rotate(45deg);
+}
+
 /* ============ Service area ============ */
 .wp-area { background: var(--wp-paper); }
 .wp-area__inner { padding-top: 72px; padding-bottom: 72px; }
@@ -717,6 +766,7 @@ svg.wp-card__bg {
   .wp-nav { display: none; }
   .wp-area__towns { grid-template-columns: 1fr 1fr; }
   .wp-faq__list { grid-template-columns: 1fr; gap: 24px; }
+  .wp-jobs__grid { grid-template-columns: 1fr 1fr; gap: 20px; }
   [id] { scroll-margin-top: 76px; }
 }
 
@@ -730,6 +780,7 @@ svg.wp-card__bg {
   .wp-header__phone { font-size: 16px; min-height: 44px; padding: 4px; }
   .wp-hero__kicker { font-size: 18px; }
   .wp-area__towns { grid-template-columns: 1fr; }
+  .wp-jobs__grid { grid-template-columns: 1fr; }
 
   /* Tighten the header so the logo always has room and nothing wraps */
   .wp-container { padding-left: 16px; padding-right: 16px; }
